@@ -1,0 +1,76 @@
+/* src/index.css */
+
+/* On garde les imports de base de Tailwind pour que le CDN les utilise */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* On définit nos variables de couleur personnalisées */
+:root {
+  --deep-blue: #020817;
+  --electric-cyan: #00BFFF;
+  --light-gray: #E2E8F0;
+}
+
+/* On applique notre fond et notre police par défaut */
+body {
+  background-color: var(--deep-blue);
+  color: var(--light-gray);
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* On recrée nos animations */
+@keyframes orbit {
+  from {
+    /* Fait tourner le "bras" de l'orbite */
+    transform: rotate(0deg); 
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* On crée des classes pour nos animations afin de les utiliser dans React */
+.animate-orbit {
+  animation: orbit 30s linear infinite;
+}
+.animate-fade-in-slow {
+  animation: fade-in 1s ease-out forwards;
+}
+.animate-fade-in-slower {
+  animation: fade-in 1.5s ease-out forwards;
+}
+
+.sun-container {
+@apply relative flex flex-col items-center justify-center rounded-full cursor-pointer transition-all duration-300;
+width: 200px; /* Ajuste la taille selon tes préférences /
+height: 200px;
+background-color: rgba(255, 255, 255, 0.1); / Un fond légèrement transparent */
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sun-container:hover {
+background-color: rgba(255, 255, 255, 0.2);
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.sun-text-name {
+@apply font-display text-3xl text-cyan-400 animate-fade-in-slow;
+}
+
+.sun-text-title {
+@apply mt-2 text-sm text-slate-200 animate-fade-in-slower;
+}
+
+.sun-satellite-orbit {
+@apply absolute rounded-full flex items-center justify-center;
+}
+
+.sun-satellite-container {
+@apply absolute;
+}
