@@ -1,5 +1,4 @@
 // src/components/Sun.tsx
-import React from 'react';
 import { User, Download, Send } from 'lucide-react';
 import Satellite from './Satellite';
 
