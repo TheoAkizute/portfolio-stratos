@@ -10,8 +10,7 @@ type SunProps = {
 
 const Sun = ({ onAboutClick, onCvClick, onContactClick }: SunProps) => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-64 h-64 group">
-      
+    <div className="relative flex flex-col items-center justify-center w-48 h-48 md:w-64 md:h-64 rounded-full transition-all duration-300 group">
       {/* L'image du soleil en arrière-plan */}
       <img
         src="/sun.png" // Assure-toi que le nom correspond à ton fichier dans /public
@@ -27,11 +26,17 @@ const Sun = ({ onAboutClick, onCvClick, onContactClick }: SunProps) => {
       
       {/* Contenu central (nom et titre) */}
       <div className="text-center z-10 transition-opacity duration-300 group-hover:opacity-0">
-        <h1 className="font-display text-4xl text-white" style={{ textShadow: '0 0 10px black' }}>
+        <h1 
+          className="font-display text-3xl md:text-4xl text-white" 
+          style={{ textShadow: '0 0 10px black' }}
+        >
           Théo CORBIER
         </h1>
-        <p className="mt-2 text-base text-slate-200" style={{ textShadow: '0 0 5px black' }}>
-          Architecte de Solutions Numériques
+        <p 
+          className="mt-2 text-sm md:text-base text-slate-200" 
+          style={{ textShadow: '0 0 5px black' }}
+        >
+          Développeur Full-Stack
         </p>
       </div>
 
