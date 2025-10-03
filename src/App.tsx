@@ -7,7 +7,6 @@ import InfoModal from "./components/InfoModal";
 import Sun from "./components/Sun";
 import HeaderTitle from "./components/HeaderTitle"; // <-- LIGNE N°1 À AJOUTER (L'IMPORTATION)
 import { AnimatePresence } from "framer-motion";
-import { User, Download, Send } from "lucide-react";
 
 const projects = [
     {
