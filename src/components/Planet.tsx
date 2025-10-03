@@ -8,7 +8,7 @@ type PlanetProps = {
 };
 
 const Planet = ({ projectName, size, texture, onClick }: PlanetProps) => {
-  const planetClasses = `group relative ${size} rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 shadow-lg hover:scale-115`;
+  const planetClasses = `group relative ${size} rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 shadow-lg hover:scale-[1.15]`;
 
   return (
     <div
