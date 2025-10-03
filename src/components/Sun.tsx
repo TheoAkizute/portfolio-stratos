@@ -10,37 +10,38 @@ type SunProps = {
 
 const Sun = ({ onAboutClick, onCvClick, onContactClick }: SunProps) => {
   return (
-    <div className="relative flex flex-col items-center justify-center w-48 h-48 md:w-64 md:h-64 rounded-full transition-all duration-300 group">
-      {/* L'image du soleil en arrière-plan */}
+    <div className="relative flex flex-col items-center justify-center w-48 h-48 md:w-64 md:h-64 group">
+      
+      {/* L'image du soleil avec l'effet d'ombre directement appliqué */}
       <img
-        src="/sun.png" // Assure-toi que le nom correspond à ton fichier dans /public
+        src="/sun.png"
         alt="Soleil"
         className="absolute w-full h-full object-cover rounded-full transition-transform duration-500 group-hover:scale-110"
+        // L'effet de boxShadow est maintenant sur l'image
+        style={{ boxShadow: '0 0 50px 10px rgba(255, 165, 0, 0.5)' }} 
       />
-
-      {/* Halo lumineux externe qui réagit au survol */}
-      <div 
+      
+      {/* L'ancien div qui créait l'espace noir est SUPPRIMÉ */}
+      {/* <div 
         className="absolute w-[110%] h-[110%] rounded-full transition-all duration-500"
         style={{ boxShadow: '0 0 50px 10px rgba(255, 165, 0, 0.5)'}}
-      ></div>
+      ></div> */}
       
-      {/* Contenu central (nom et titre) */}
       <div className="text-center z-10 transition-opacity duration-300 group-hover:opacity-0">
         <h1 
-          className="font-display text-3xl md:text-4xl text-white" 
-          style={{ textShadow: '0 0 10px black' }}
+          className="font-display text-3xl md:text-4xl text-white"
+          style={{ textShadow: '0 0 10px #994500' }}
         >
           Théo CORBIER
         </h1>
         <p 
-          className="mt-2 text-sm md:text-base text-slate-200" 
-          style={{ textShadow: '0 0 5px black' }}
+          className="mt-2 text-sm md:text-base text-slate-200"
+          style={{ textShadow: '0 0 5px #994500' }}
         >
           Développeur Full-Stack
         </p>
       </div>
 
-      {/* Les satellites qui apparaissent au survol */}
       <div className="absolute w-full h-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
           <Satellite label="À propos" icon={<User size={24} />} onClick={onAboutClick} />

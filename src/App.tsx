@@ -51,7 +51,7 @@ const projects = [
         texture: "/planet5.png",
         description: "Le jeu Snake classique, recréé en JavaScript pur et utilisant l'élément HTML Canvas. Le projet se concentre sur la logique de la boucle de jeu, la gestion des collisions et les contrôles au clavier.",
         technologies: ["JavaScript (ES6+)", "HTML Canvas", "Game Logic"],
-        size: "w-16 h-16",
+        size: "w-20 h-20",
         orbitSpeed: "40s", orbitRadius: 230,
     },
 ];
