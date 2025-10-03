@@ -5,7 +5,7 @@ import Planet from "./components/Planet";
 import ProjectModal from "./components/ProjectModal";
 import InfoModal from "./components/InfoModal";
 import Sun from "./components/Sun";
-import HeaderTitle from "./components/HeaderTitle"; // <-- LIGNE N°1 À AJOUTER (L'IMPORTATION)
+import HeaderTitle from "./components/HeaderTitle";
 import { AnimatePresence } from "framer-motion";
 
 const projects = [
@@ -72,19 +72,15 @@ function App() {
     };
 
     return (
-        <main className="relative flex flex-col h-screen overflow-hidden">
+        <main className="relative flex flex-col h-screen overflow-hidden bg-deep-blue">
             <Starfield />
-            <HeaderTitle /> {/* <-- LIGNE N°2 À AJOUTER (L'APPEL) */}
 
-            <div className="relative z-10 flex flex-col items-center justify-center h-full w-full">
-                
-                <Sun
-                    onAboutClick={() => setActiveModal('about')}
-                    onCvClick={handleDownloadCV}
-                    onContactClick={() => setActiveModal('contact')}
-                />
-
-                <div className="hidden md:block">
+            {/* --- VUE ORDINATEUR ET TABLETTE (md et plus) --- */}
+            {/* Ce bloc est caché par défaut et ne s'affiche que sur les grands écrans */}
+            <div className="hidden md:flex flex-col h-full">
+                <HeaderTitle className="absolute top-8 left-8 z-20" />
+                <div className="relative z-10 flex-grow flex flex-col items-center justify-center">
+                    <Sun onAboutClick={() => setActiveModal('about')} onCvClick={handleDownloadCV} onContactClick={() => setActiveModal('contact')} />
                     {projects.map((project, index) => {
                         const totalPlanets = projects.length;
                         const speedInSeconds = parseFloat(project.orbitSpeed);
@@ -120,9 +116,15 @@ function App() {
                         );
                     })}
                 </div>
+            </div>
 
-                <div className="block md:hidden mt-12 w-full px-4 overflow-y-auto">
-                    <h2 className="text-center font-display text-2xl text-cyan-400 mb-6">Projets</h2>
+            {/* --- VUE TÉLÉPHONE (en dessous de md) --- */}
+            {/* Ce bloc est visible par défaut et se cache sur les grands écrans */}
+            <div className="block md:hidden w-full h-full overflow-y-auto pt-8 px-4">
+                <HeaderTitle className="mb-8" />
+                <div className="flex flex-col items-center">
+                    <Sun onAboutClick={() => setActiveModal('about')} onCvClick={handleDownloadCV} onContactClick={() => setActiveModal('contact')} />
+                    <h2 className="text-center font-display text-2xl text-cyan-400 my-8">Projets</h2>
                     <div className="flex flex-col items-center gap-8 pb-8">
                         {projects.map((project) => (
                             <Planet
@@ -135,7 +137,6 @@ function App() {
                         ))}
                     </div>
                 </div>
-
             </div>
 
             <AnimatePresence>
