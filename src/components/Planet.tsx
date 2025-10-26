@@ -1,9 +1,7 @@
-// src/components/Planet.tsx
-
 type PlanetProps = {
   projectName: string;
   size: string;
-  texture: string; // <-- On déclare bien qu'on attend 'texture' et 'size'
+  texture: string;
   onClick: () => void;
 };
 

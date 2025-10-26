@@ -144,7 +144,7 @@ function App() {
                 {activeModal === 'about' && (
                     <InfoModal title="À Propos de Moi" onClose={() => setActiveModal(null)}>
                         <p>Mon exploration a débuté dans les mondes du commerce et de la stratégie (BTS MUC, Licence Pro RDC), où j'ai appris à décrypter les besoins et à piloter des projets. Aujourd'hui, chez Epitech, je me forge une expertise technique pour maîtriser le "Comment".</p>
-                        <p className="mt-4">Mon objectif : combiner ma vision stratégique avec des compétences techniques robustes pour construire des solutions numériques cohérentes, performantes et pertinentes. Je suis un pont entre deux mondes.</p>
+                        <p className="mt-4">Mon objectif : combiner ma vision stratégique avec des compétences techniques robustes pour construire des solutions numériques cohérentes, performantes et pertinentes.</p>
                     </InfoModal>
                 )}
                 {activeModal === 'contact' && (

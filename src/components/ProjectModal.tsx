@@ -1,8 +1,6 @@
-// src/components/ProjectModal.tsx
 import { motion } from "framer-motion";
-import React from 'react'; // <-- AJOUT DE CET IMPORT
+import React from 'react';
 
-// On définit le type de données que le projet va recevoir
 type Project = {
   id: number;
   name: string;
@@ -17,7 +15,6 @@ type ProjectModalProps = {
 
 const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
   return (
-    // Le fond semi-transparent qui ferme le modal au clic
     <motion.div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75"
       onClick={onClose}
@@ -25,11 +22,9 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      {/* Le panneau du modal, qui ne se ferme pas au clic */}
       <motion.div
         className="relative w-11/12 max-w-2xl p-8 bg-panel-blue rounded-lg shadow-xl text-light-gray"
-        // --- LA LIGNE CORRIGÉE EST ICI ---
-        onClick={(e: React.MouseEvent) => e.stopPropagation()} // On précise le type de 'e'
+        onClick={(e: React.MouseEvent) => e.stopPropagation()}
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: 50, opacity: 0 }}

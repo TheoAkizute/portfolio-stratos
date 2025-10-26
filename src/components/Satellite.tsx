@@ -1,9 +1,8 @@
-// src/components/Satellite.tsx
 import React from 'react';
 
 type SatelliteProps = {
   label: string;
-  icon: React.ReactNode; // Permet de passer une icône comme un composant
+  icon: React.ReactNode;
   onClick: () => void;
 };
 

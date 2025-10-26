@@ -1,10 +1,8 @@
-// src/components/Starfield.tsx
 import { useEffect, useState, useCallback } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import type { Engine } from "@tsparticles/engine";
 import { loadAll } from "@tsparticles/all";
 
-// On définit la configuration de l'étoile filante une seule fois pour la réutiliser
 const shootingStarParticles = {
     move: {
         enable: true,

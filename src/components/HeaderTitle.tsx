@@ -1,7 +1,5 @@
-// src/components/HeaderTitle.tsx
 import { motion } from 'framer-motion';
 
-// On ajoute une prop 'className' pour pouvoir le styliser depuis l'extérieur
 type HeaderTitleProps = {
   className?: string;
 };
@@ -12,7 +10,6 @@ const HeaderTitle = ({ className }: HeaderTitleProps) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1, delay: 0.5 }}
-      // On utilise la className passée en prop pour le positionnement
       className={className}
     >
       <h1 

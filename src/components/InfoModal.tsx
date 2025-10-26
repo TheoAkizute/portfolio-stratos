@@ -1,10 +1,9 @@
-// src/components/InfoModal.tsx
 import { motion } from "framer-motion";
 import React from 'react';
 
 type InfoModalProps = {
   title: string;
-  children: React.ReactNode; // Accepte n'importe quel contenu
+  children: React.ReactNode;
   onClose: () => void;
 };
 

@@ -1,28 +1,21 @@
-/* src/index.css */
-
-/* On garde les imports de base de Tailwind pour que le CDN les utilise */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* On définit nos variables de couleur personnalisées */
 :root {
   --deep-blue: #020817;
   --electric-cyan: #00BFFF;
   --light-gray: #E2E8F0;
 }
 
-/* On applique notre fond et notre police par défaut */
 body {
   background-color: var(--deep-blue);
   color: var(--light-gray);
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-/* On recrée nos animations */
 @keyframes orbit {
   from {
-    /* Fait tourner le "bras" de l'orbite */
     transform: rotate(0deg); 
   }
   to {
@@ -35,7 +28,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* On crée des classes pour nos animations afin de les utiliser dans React */
 .animate-orbit {
   animation: orbit 30s linear infinite;
 }
@@ -48,9 +40,9 @@ body {
 
 .sun-container {
 @apply relative flex flex-col items-center justify-center rounded-full cursor-pointer transition-all duration-300;
-width: 200px; /* Ajuste la taille selon tes préférences /
+width: 200px;
 height: 200px;
-background-color: rgba(255, 255, 255, 0.1); / Un fond légèrement transparent */
+background-color: rgba(255, 255, 255, 0.1);
 border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
